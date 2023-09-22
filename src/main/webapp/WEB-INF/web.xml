@@ -19,4 +19,44 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>GestionContact</display-name>
+    <servlet-name>GestionContact</servlet-name>
+    <servlet-class>controllers.GestionContact</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GestionContact</servlet-name>
+    <url-pattern>/GestionContact</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Edit</display-name>
+    <servlet-name>Edit</servlet-name>
+    <servlet-class>controllers.Edit</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Edit</servlet-name>
+    <url-pattern>/Edit</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Delete</display-name>
+    <servlet-name>Delete</servlet-name>
+    <servlet-class>controllers.Delete</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Delete</servlet-name>
+    <url-pattern>/Delete</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AddContact</display-name>
+    <servlet-name>AddContact</servlet-name>
+    <servlet-class>controllers.AddContact</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddContact</servlet-name>
+    <url-pattern>/AddContact</url-pattern>
+  </servlet-mapping>
 </web-app>
