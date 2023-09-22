@@ -19,7 +19,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" ></script>
 </head>
 <body>
-<form action="GestionContact" method="post">
+<form action="Edit" method="post">
     <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Nom</label>
         <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nom">
@@ -36,7 +36,7 @@
         <label for="exampleFormControlInput4" class="form-label">Email address</label>
         <input type="email" class="form-control" id="exampleFormControlInput4" placeholder="name@example.com">
       </div>
-      <button type="submit" class="btn btn-syccess">Ajouter</button>
+      <button type="submit" class="btn btn-syccess">Modifier</button>
 </form>
 </body>
 </html>
