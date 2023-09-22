@@ -29,7 +29,8 @@ public class Edit extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		// response.getWriter().append("Served at: ").append(request.getContextPath());
+		// response.getWriter().append("Served at: ").append(request.getContextPath())
+		this.getServletContext().getRequestDispatcher("/WEB-INF/modifier_contacts.jsp").forward(request, response);
 	}
 
 	/**
@@ -40,7 +41,8 @@ public class Edit extends HttpServlet {
 		// doGet(request, response);
 		int id = Integer.parseInt(request.getParameter("id"));
 		ContactDTO contactDTO = new ContactDTO();
-		// contactDTO.e
+		contactDTO.editContact(id, request.getParameter("nom"), request.getParameter("prenom"), Integer.parseInt(request.getParameter("numero_tel")),request.getParameter("email"));
+		this.getServletContext().getRequestDispatcher("/WEB-INF/contacts.jsp").forward(request, response);
 	}
 
 }
