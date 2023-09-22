@@ -3,4 +3,4 @@
 - ABBAOUI Achraf
 - MATRANE Aymane
 - EL HADRI Maryam
-- AMAGHAROU Fatimazahra
+- Amagarou fatima zahrae

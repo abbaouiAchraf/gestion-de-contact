@@ -32,8 +32,7 @@ public class Delete extends HttpServlet {
 		int id = Integer.parseInt(request.getParameter("id"));
 		ContactDTO contactDTO = new ContactDTO();
 		contactDTO.deleteContect(id);
-		request.setAttribute("contacts", contactDTO.recupererContacts());
-		this.getServletContext().getRequestDispatcher("/WEB-INF/contacts.jsp").forward(request, response);
+		response.sendRedirect("GestionContact");
 	}
 
 	/**

@@ -29,6 +29,7 @@ public class AddContact extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		// response.getWriter().append("Served at: ").append(request.getContextPath());
+		System.out.println("add controller get");
 		this.getServletContext().getRequestDispatcher("/WEB-INF/ajouter_contacts.jsp").forward(request, response);
 	}
 
@@ -38,9 +39,12 @@ public class AddContact extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		// doGet(request, response);
+		System.out.println("add controller post");
 		ContactDTO contactDTO = new ContactDTO();
-		contactDTO.addContact(request.getParameter("nom"), request.getParameter("prenom"), Integer.parseInt(request.getParameter("numero_tel")),request.getParameter("email"));
-		this.getServletContext().getRequestDispatcher("/WEB-INF/contacts.jsp").forward(request, response);
+		contactDTO.addContact(request.getParameter("nom"), request.getParameter("prenom"), Integer.parseInt(request.getParameter("numero_tele")),request.getParameter("email"));
+		System.out.println("added in controller");
+		response.sendRedirect("GestionContact");
+	
 	}
 
 }

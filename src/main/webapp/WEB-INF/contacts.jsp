@@ -21,17 +21,18 @@
 </head>
 <body>
     <div class="container mt-5">
-    <button><a href="AddContact">Ajouter</a></button>
+    <div class="d-flex justify-content-end"><a href="AddContact" class="btn btn-success fw-bold fs-3">Ajouter</a></div>
         <h1>Contact List</h1>
-        <table class="table table-striped">
+   <div class="my-3 bg-light">
+          <table class="table table-striped">
             <thead>
-                <tr>
+                <tr class="fs-2 fw-bolder">
                     <th>ID</th>
                     <th>Name</th>
                     <th>Email</th>
                     <th>Phone</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
+                    <th classs="text-danger">Edit</th>
+                    <th class="text-success">Delete</th>
                 </tr>
             </thead>
             <tbody>
@@ -41,14 +42,15 @@
                         <td>${contact.prenom}</td>
                         <td>${contact.email}</td>
                         <td>${contact.numero_tele}</td>
-                        <td><a href="Edit?id=${contact.id}"></a></td>
-                        <td><a href="Delete?id=${contact.id}"></a></td>
+                        <td><a class="btn btn-success px-3" href="Edit?id=${contact.id}"> modifier</a></td>
+                        <td><a class="btn btn-danger px-3" href="Delete?id=${contact.id}">supprimer</a></td>
                     </tr>
             </c:forEach>
                     
              
             </tbody>
         </table>
+   </div>
     </div>
 
     <!-- Include Bootstrap JS and jQuery -->
