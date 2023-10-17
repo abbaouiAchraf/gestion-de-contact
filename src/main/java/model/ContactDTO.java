@@ -10,13 +10,13 @@ public class ContactDTO {
 	PreparedStatement ps = null;
 	Connection conn = connectionDB.getConnexion();
 	
-	public void addContact(String nom, String prenom, int numero_tel, String email) {
+	public void addContact(String nom, String prenom, String numero_tel, String email) {
 		
 	    try {
-			ps = conn.prepareStatement("INSERT INTO contact values (?,?,?,?)");
+			ps = conn.prepareStatement("INSERT INTO contact(nom,prenom,numero_tele,email) values (?,?,?,?)");
 			ps.setString(1, nom);
 		    ps.setString(2, prenom);
-		    ps.setInt(3, numero_tel);
+		    ps.setString(3, numero_tel);
 		    ps.setString(4, email);
 		    ps.executeUpdate();
 
@@ -40,12 +40,12 @@ public class ContactDTO {
 			e.printStackTrace();
 		}
 	 }
-	public void editContact(int id, String nom, String prenom, int numero_tel, String email) {
+	public void editContact(int id, String nom, String prenom, String numero_tel, String email) {
 		try {
 			ps = conn.prepareStatement("update contect set nom = ?, prenom = ?, numero_tel = ?, email = ? where id = ?");
 		    ps.setString(1,nom);
 		    ps.setString(2, prenom);
-		    ps.setInt(3, numero_tel);
+		    ps.setString(3, numero_tel);
 		    ps.setString(4, email);
 		    ps.setInt(5, id);
 		    ps.executeUpdate();
@@ -71,7 +71,7 @@ public class ContactDTO {
 				int id = rs.getInt("id");
 				String nom=rs.getString("nom");
 				String prenom=rs.getString("prenom");
-				int numero_tele= rs.getInt("numero_tele") ;
+				String numero_tele= rs.getString("numero_tele") ;
 				String email=rs.getString("email") ;
 				Contact c = new Contact(id, nom, prenom, numero_tele, email);
 				messagesRecus.add(c);
@@ -96,7 +96,7 @@ public class ContactDTO {
 				int id = rs.getInt("id");
 				String nom=rs.getString("nom");
 				String prenom=rs.getString("prenom");
-				int numero_tele= rs.getInt("numero_tele") ;
+				String numero_tele= rs.getString("numero_tele") ;
 				String email=rs.getString("email") ;
 				Contact c = new Contact(id, nom, prenom, numero_tele, email);
 				messagesRecus.add(c);
@@ -108,7 +108,7 @@ public class ContactDTO {
 		
 		 return messagesRecus;
 	}
-	public void insertContact(int id, String nom, String prenom, int numero_tele, String email) {
+	public void insertContact(int id, String nom, String prenom, String numero_tele, String email) {
 		 ResultSet rs = null;
 		 PreparedStatement ps = null;
 		Connection conn = connectionDB.getConnexion();
@@ -118,7 +118,7 @@ public class ContactDTO {
 			ps.setInt(1, id);
 		    ps.setString(2, nom);
 		    ps.setString(3, prenom);
-		    ps.setInt(4, numero_tele);
+		    ps.setString(4, numero_tele);
 		    ps.setString(5,email);
 		    ps.executeUpdate();
 

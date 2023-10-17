@@ -41,7 +41,7 @@ public class Edit extends HttpServlet {
 		// doGet(request, response);
 		int id = Integer.parseInt(request.getParameter("id"));
 		ContactDTO contactDTO = new ContactDTO();
-		contactDTO.editContact(id, request.getParameter("nom"), request.getParameter("prenom"), Integer.parseInt(request.getParameter("numero_tel")),request.getParameter("email"));
+		contactDTO.editContact(id, request.getParameter("nom"), request.getParameter("prenom"), request.getParameter("numero_tel"),request.getParameter("email"));
 		this.getServletContext().getRequestDispatcher("/WEB-INF/contacts.jsp").forward(request, response);
 	}
 

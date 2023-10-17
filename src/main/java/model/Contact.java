@@ -4,9 +4,9 @@ public class Contact {
 	public int id;
 	public String nom;
 	public String prenom;
-	public int numero_tele;
+	public String numero_tele;
 	public String email;
-	public Contact(int id, String nom, String prenom,int numero_tele, String email) {
+	public Contact(int id, String nom, String prenom,String numero_tele, String email) {
 		this.id = id;
 		this.nom = nom;
 		this.prenom = prenom;
@@ -31,10 +31,10 @@ public class Contact {
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
-	public int getNumero_tele() {
+	public String getNumero_tele() {
 		return numero_tele;
 	}
-	public void setNumero_tele(int numero_tele) {
+	public void setNumero_tele(String numero_tele) {
 		this.numero_tele = numero_tele;
 	}
 	public String getEmail() {

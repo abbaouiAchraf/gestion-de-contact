@@ -41,7 +41,8 @@ public class AddContact extends HttpServlet {
 		// doGet(request, response);
 		System.out.println("add controller post");
 		ContactDTO contactDTO = new ContactDTO();
-		contactDTO.addContact(request.getParameter("nom"), request.getParameter("prenom"), Integer.parseInt(request.getParameter("numero_tele")),request.getParameter("email"));
+		System.out.println(request.getParameter("nom")+" "+ request.getParameter("prenom")+" "+ request.getParameter("numero_tele")+" "+request.getParameter("email"));
+		contactDTO.addContact(request.getParameter("nom"), request.getParameter("prenom"), request.getParameter("numero_tele"),request.getParameter("email"));
 		System.out.println("added in controller");
 		response.sendRedirect("GestionContact");
 	
