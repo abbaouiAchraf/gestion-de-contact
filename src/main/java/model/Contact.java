@@ -13,6 +13,9 @@ public class Contact {
 		this.numero_tele = numero_tele;
 		this.email = email;
 	}
+	public Contact() {
+		
+	}
 	public int getId() {
 		return id;
 	}

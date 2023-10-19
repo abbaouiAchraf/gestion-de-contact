@@ -9,6 +9,28 @@ public class ContactDTO {
 	ResultSet rs = null;
 	PreparedStatement ps = null;
 	Connection conn = connectionDB.getConnexion();
+	public Contact getContactById(int id) {
+		Contact c = new Contact();
+		try {
+			ps = conn.prepareStatement("SELECT * FROM contact where id = ?");
+			ps.setInt(1, id);
+		    
+		    
+		    ResultSet rs = ps.executeQuery();
+		    if(rs.next()) {
+		    	c.setId(id);
+		    	c.setNom(rs.getString("nom"));
+		    	c.setPrenom(rs.getString("prenom"));
+		    	c.setNumero_tele(rs.getString("numero_tele"));
+		    	c.setEmail(rs.getString("email"));
+		    }
+		    conn.close();
+	    } catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return c; 
+	}
 	
 	public void addContact(String nom, String prenom, String numero_tel, String email) {
 		
@@ -42,7 +64,7 @@ public class ContactDTO {
 	 }
 	public void editContact(int id, String nom, String prenom, String numero_tel, String email) {
 		try {
-			ps = conn.prepareStatement("update contect set nom = ?, prenom = ?, numero_tel = ?, email = ? where id = ?");
+			ps = conn.prepareStatement("update contect set nom = ?, prenom = ?, numero_tele = ?, email = ? where id = ?");
 		    ps.setString(1,nom);
 		    ps.setString(2, prenom);
 		    ps.setString(3, numero_tel);
@@ -57,7 +79,7 @@ public class ContactDTO {
 		}
 		
 	}
-	public  ArrayList<Contact> recupererContact(int id_rec){
+	public ArrayList<Contact> recupererContact(int id_rec){
 		 ArrayList<Contact> messagesRecus=new ArrayList<Contact>();
 		 PreparedStatement ps = null;
 		 ResultSet rs = null;

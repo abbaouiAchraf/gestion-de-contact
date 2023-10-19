@@ -20,21 +20,22 @@
 </head>
 <body>
 <form action="Edit" method="post">
+	<input type="hidden" name="id" value="${contact.id}">
     <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Nom</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nom">
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nom" value = "${contact.nom}">
       </div>
       <div class="mb-3">
         <label for="exampleFormControlInput2" class="form-label">Prénom</label>
-        <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Prénom">
+        <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Prénom" value = "${contact.prenom}">
       </div>
       <div class="mb-3">
         <label for="exampleFormControlInput3" class="form-label">Numéro Tel</label>
-        <input type="text" class="form-control" id="exampleFormControlInput3" placeholder="Numéro Téléphone">
+        <input type="text" class="form-control" id="exampleFormControlInput3" placeholder="Numéro Téléphone" value = "${contact.numero_tele}">
       </div>
     <div class="mb-3">
         <label for="exampleFormControlInput4" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="exampleFormControlInput4" placeholder="name@example.com">
+        <input type="email" class="form-control" id="exampleFormControlInput4" placeholder="name@example.com" value = "${contact.email}">
       </div>
       <button type="submit" class="btn btn-syccess">Modifier</button>
 </form>
